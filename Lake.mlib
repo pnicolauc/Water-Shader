@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<materialLib name="water">
+
+	<textures>
+		<texture name="sky" filename="textures/sky.jpg" mipmap="true"><WIDTH value=1920 />
+    <HEIGHT value=1080 /></texture>
+		<texture name="ground" filename="textures/ground.jpg" mipmap="true"><WIDTH value=1920 />
+    <HEIGHT value=1080 /></texture>
+		<texture name="dudv" filename="textures/DUDV.png" mipmap="true" />
+		<texture name="normalMap" filename="textures/normal.png" mipmap="true" />
+		<texture name="depth" filename="textures/depth.png" mipmap="true" />
+	</textures>
+	<shaders>
+		<shader name="water" 
+					ps="shaders/water.frag" 
+					vs="shaders/water.vert" />
+	</shaders>
+	
+	<materials>
+		<material name="water">
+			<shader name="water">
+				<values>
+					<valueof uniform="PVM"          	type="RENDERER" context="CURRENT" 
+														component="PROJECTION_VIEW_MODEL" />
+					<valueof uniform="P"          	type="RENDERER" context="CURRENT" 
+														component="PROJECTION" />								
+					<valueof uniform="M"     		 type="RENDERER" context="CURRENT" 
+														component="MODEL" />
+														
+					<valueof uniform="V"     		 type="RENDERER" context="CURRENT" 
+														component="VIEW" />				
+					<valueof uniform="VM"     		 type="RENDERER" context="CURRENT" 
+														component="VIEW_MODEL" />
+														
+									
+					<valueof uniform="sky"		type="MATERIAL_TEXTURE" context="CURRENT"
+												component="UNIT"
+												id="0" />
+					<valueof uniform="ground"		type="MATERIAL_TEXTURE" context="CURRENT"
+												component="UNIT"
+													id="1" />
+					<valueof uniform="dudv"		type="MATERIAL_TEXTURE" context="CURRENT"
+												component="UNIT"
+												id="2" />
+					<valueof uniform="normalMap"		type="MATERIAL_TEXTURE" context="CURRENT"
+												component="UNIT"
+												id="3" />	
+					<valueof uniform="depth"		type="MATERIAL_TEXTURE" context="CURRENT"
+												component="UNIT"
+												id="4" />																	
+					<valueof uniform="frameCount" 	type="RENDERER" context="CURRENT"
+													component="FRAME_COUNT" />									
+					<!--valueof uniform="camWorldPos"	type="CAMERA" context="MainCamera"	
+												component="POSITION" /-->
+
+					<valueof uniform="camWorldPos"	type="CAMERA" context="CURRENT"	
+												component="POSITION" />
+					<valueof uniform="l_dir" 
+							 type="LIGHT" context="Sun"
+							 component="POSITION" />
+											</values>
+			</shader>
+			<textures>
+				<texture name="sky" UNIT ="0" />
+				<texture name="ground" UNIT = "1" />
+				<texture name="dudv" UNIT = "2" />
+				<texture name="normalMap" UNIT = "3" />
+				<texture name="depth" UNIT = "4" />
+			</textures>
+		</material>
+		
+
+		</materials>
+</materialLib>

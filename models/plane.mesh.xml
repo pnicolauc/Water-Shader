@@ -1,0 +1,84 @@
+<mesh>
+    <submeshes>
+      
+        <submesh material="plane" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="2">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="3" v2="4" v3="5" />
+
+            </faces>
+            <geometry vertexcount="6">
+                <vertexbuffer positions="true">
+                    <vertex>
+                        <position x="0" y="0" z="50" />
+                    </vertex>
+                    <vertex>
+                        <position x="50" y="0" z="50" />
+                    </vertex>
+                    <vertex>
+                        <position x="50" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="50" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="0" z="50" />
+                    </vertex>
+                    </vertexbuffer>
+                <vertexbuffer normals="true">
+                    <vertex>
+                        <normal x="0" y="1" z="-4.37114e-008" />
+                    </vertex>
+                    <vertex>
+                        <normal x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <normal x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <normal x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <normal x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <normal x="0" y="1" z="0" />
+                    </vertex>
+                    
+                </vertexbuffer>
+                <vertexbuffer texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <texcoord u="0" v="1" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <texcoord u="1" v="1" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <texcoord u="1" v="0" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <texcoord u="1" v="0" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <texcoord u="0" v="0" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    <vertex>
+                        <texcoord u="0" v="1" />
+                        <tangent x="1" y="0" z="0" />
+                    </vertex>
+                    
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+    </submeshes>
+
+
+</mesh>

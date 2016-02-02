@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<project name="water" width=512 height =512>
+	<assets>
+		<scenes>
+			<scene name="water" >
+				<file name="models/plane.obj"/>
+			</scene>
+		</scenes>
+		
+		<viewports>
+			<viewport name="MainViewport" fixed="false">
+				<CLEAR_COLOR r="0" g="0" b="0" />
+			</viewport>
+		</viewports>
+		
+		<cameras>
+			<camera name="MainCamera" type="perspective">
+				<viewport name="MainViewport" />
+				<projection TYPE="PERSPECTIVE" FOV="60.0" NEAR="1.0" FAR="1000.0" />
+				<POSITION x="-10" y="15" z="60" />
+				<VIEW x="0.58" y="-0.22" z="-0.58" />
+				<UP x="0.0" y="1.0" z="0.0" />
+			</camera>
+		</cameras>
+		
+		<lights>
+			<light name="Sun" type="directional">
+				<POSITION x="-150.0" y="150.0" z="0.0" />
+				<DIRECTION x="1.0" y="-1.0" z="-0.25" />
+				<COLOR r="0.9" g="0.9" b="0.9" />
+			</light>
+		</lights>
+
+		<materialLibs>
+			<materialLib filename="Lake.mlib" />
+		</materialLibs>
+	</assets>
+	<pipelines>
+		<pipeline name="water" default="true">
+			<pass class="default" name="pass1">
+				<scenes>
+					<scene name="water" />
+				</scenes>
+				<camera name="MainCamera" />
+				<lights>
+					<light name="Sun" />
+				</lights>
+				<materialMaps>
+					<map fromMaterial="*" toLibrary="water" toMaterial="water"/>
+				</materialMaps>
+			</pass>
+		</pipeline>
+	</pipelines>
+</project>
